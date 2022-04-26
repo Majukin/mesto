@@ -1,0 +1,16 @@
+.element__title-button{
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  width: 22px;
+  height: 19px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-image: url(../../../images/disabled.png);
+}
+
+.element__title-button:hover{
+  opacity: 0.5;
+}

@@ -1,0 +1,8 @@
+.profile__avatar{
+  background-image: url(../../../images/Jacques.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 127px;
+  height: 127px;
+  border-radius: 100px;
+}
