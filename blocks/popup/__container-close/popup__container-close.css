@@ -8,6 +8,10 @@
   height: 32px;
   top: -32px;
   right: -32px;
+  background-image: url(../../../images/Close_Icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
 }
 
 .popup__container-close:hover {
