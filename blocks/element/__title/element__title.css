@@ -1,6 +1,12 @@
-.element__title{
-  position: relative;
-  height: 79px;
-  background-color: #FFFFFF;
-  border-radius: 0 0 20px 20px;
+.element__title {
+  margin: 0 auto;
+  margin-top: 25px;
+  max-width: 246px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

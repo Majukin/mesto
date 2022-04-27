@@ -1,8 +1,8 @@
-.popup__container-form-name {
+.popup__input {
   margin: 0 auto;
   margin-top: 30px;
-  padding-bottom: 13px;
   max-width: 358px;
+  padding-bottom: 8px;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .popup__container-form-name {
+  .popup__input {
     max-width: 238px;
   }
 }

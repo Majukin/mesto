@@ -1,4 +1,4 @@
-.element__title-button{
+.element__like-button{
   background: none;
   border: none;
   box-shadow: none;
@@ -7,10 +7,10 @@
   height: 19px;
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 20px;
   background-image: url(../../../images/disabled.png);
 }
 
-.element__title-button:hover{
+.element__like-button:hover{
   opacity: 0.5;
 }

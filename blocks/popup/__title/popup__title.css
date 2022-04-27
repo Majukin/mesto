@@ -1,18 +1,17 @@
-.popup__container-form-title {
-  margin: 0 auto;
-  padding-bottom: 24px;
-  max-width: 358px;
+.popup__title {
+  margin: 0;
+  margin-top: 34px;
+  padding-bottom: 18px;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
-  text-align: center;
 }
 
 @media screen and (max-width: 320px) {
-  .popup__container-form-title {
+  .popup__title {
+    margin-top: 0;
     padding-bottom: 45px;
     padding-top: 25px;
-    max-width: 238px;
     font-size: 18px;
     line-height: 22px;
   }
