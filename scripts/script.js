@@ -22,9 +22,9 @@ function formSubmitHandler(evt) {
   evt.preventDefault(); 
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
+  closePopup();
 }
 
 closePopupButton.addEventListener('click', closePopup);
 openPopupButton.addEventListener('click', openPopup);
 formElement.addEventListener('submit', formSubmitHandler); 
-closeInfoButon.addEventListener('click', closePopup);
