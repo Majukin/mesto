@@ -21,57 +21,15 @@
       <button class="profile__add-button" type="button"></button>
     </section>
     <section class="elements">
-      <div class="element">
-        <img src="images/Karachaevsk.jpg" alt="Карачаевск" class="element__image">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="images/elbrus.png" alt="Эльбрус" class="element__image">
-        <div class="element__info">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="images/dombay.png" alt="Домбай" class="element__image">
-        <div class="element__info">
-          <h2 class="element__title">Гора Домбай</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="images/elbrus.png" alt="Эльбрус" class="element__image">
-        <div class="element__info">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="images/dombay.png" alt="Домбай" class="element__image">
-        <div class="element__info">
-          <h2 class="element__title">Гора Домбай</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </div>
-      <div class="element">
-        <img src="images/Karachaevsk.jpg" alt="Карачаевск" class="element__image">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button class="element__like-button" type="button"></button>
-        </div>
-      </div>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__footnote">&copy; 2022 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup" id="popup_edit">
     <div class="popup__container">
-      <button class="popup__close-button"></button>
-      <form class="popup__form" name="form">
+      <button class="popup__close-button" id="popup__close-button_edit"></button>
+      <form class="popup__form" id="popup__form_edit">
         <h2 class="popup__title">Редактировать профиль</h2>
         <input type="text" class="popup__input popup__input_type_name" size="358" name="name">
         <input type="text" class="popup__input popup__input_type_job" size="358" name="job">
@@ -79,6 +37,35 @@
       </form>
     </div>
   </div>
+  <div class="popup" id="popup_add">
+    <div class="popup__container">
+      <button class="popup__close-button" id="popup__close-button_add"></button>
+      <form class="popup__form" id="popup__form_add">
+        <h2 class="popup__title">Новое место</h2>
+        <input type="text" class="popup__input popup__input_type_place" size="358" name="place" placeholder="Название">
+        <input type="text" class="popup__input popup__input_type_link" size="358" name="link"
+          placeholder="Ссылка на картинку">
+        <button class="popup__form-button" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup" id="popup_image">
+    <div class="popup__image-container">
+      <img src="#" class="popup__image" alt="картинка" id="popup__image-open">
+      <h2 class="popup__image-title"></h2>
+      <button class="popup__close-button" id="popup__close-button_image"></button>
+    </div>
+  </div>
+  <template id="element-template">
+    <div class="element">
+      <img src="#" alt="картинка" class="element__image">
+      <button class="element__delete-button" type="button"></button>
+      <div class="element__info">
+        <h2 class="element__title"></h2>
+        <button class="element__like-button" type="button"></button>
+      </div>
+    </div>
+  </template>
   <script src="./scripts/script.js"></script>
-</body>
+  </body>
 </html>

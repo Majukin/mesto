@@ -8,9 +8,9 @@
   position: absolute;
   top: 30px;
   right: 20px;
-  background-image: url(../../../images/disabled.png);
+  background-image: url(../../../images/disabled.svg);
 }
 
-.element__like-button:hover{
+.element__like-button:hover {
   opacity: 0.5;
 }
