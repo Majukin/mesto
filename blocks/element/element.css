@@ -1,6 +1,8 @@
 .element{
   display: flex;
   flex-direction: column;
+  position: relative;
+  width: 100%;
 }
 
 @media screen and (max-width: 720px) {
