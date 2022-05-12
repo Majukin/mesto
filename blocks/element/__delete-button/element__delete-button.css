@@ -10,3 +10,7 @@
   right: 20px;
   background-image: url(../../../images/Group.svg);
 }
+
+.element__delete-button:hover {
+  opacity: 0.5;
+}
