@@ -1,7 +1,0 @@
-.popup__input-container_invalid .error{
-  visibility: visible;
-}
-
-.popup__input-container_invalid .popup__input {
-  border-bottom: 1px solid red;
-}

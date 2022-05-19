@@ -21,20 +21,6 @@ const buttonClosePopupImage = document.querySelector('#popup__close-button_image
 const popupImageCard = document.querySelector('.popup__image');  
 const popupImageTitleCard = document.querySelector('.popup__image-title'); 
 
-
-const popupForm = document.querySelector('.popup__form');
-const popupInput = document.querySelector('.popup__input');
-const buttonClosePopup = document.querySelector('.popup__form-button');
-
-const popupFormEdit = document.querySelector('#popup__form_edit');
-const submitFormEdit = document.querySelector('#popup__form-button_edit');
-const submitFormAdd = document.querySelector('#popup__form-button_add');
-const submitForm = document.querySelector('#popup__form-button');
-const name = document.querySelector('#name');
-const job = document.querySelector('#job');
-const place = document.querySelector('#place');
-const link = document.querySelector('#link');
-
 // открывает попап 
 const openPopup = (popupName) => { 
   popupName.classList.add('popup_opened'); 
