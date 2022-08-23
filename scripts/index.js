@@ -24,7 +24,6 @@ export const popupImageTitleCard = document.querySelector('.popup__image-title')
 const buttonElement = document.querySelector('.popup__form-button'); 
 const buttonFormAdd = document.querySelector('#popup__form-button_add');
 
-
 const settings = { 
   formSelector: '.popup__form', 
   inputSelector: '.popup__input', 
@@ -35,7 +34,6 @@ const settings = {
 
 export const validationPopapEdit = new FormValidator(settings, '#popup__form-button_edit').enableValidation();
 export const validationPopapAdd = new FormValidator(settings, '#popup__form-button_add').enableValidation();
-
 
 const initialCards = [  
   {  
@@ -64,102 +62,84 @@ const initialCards = [
   }  
 ];   
 
-initialCards.forEach((item) => { //добавление карточек из массива
-  const card = new Card(item, '#element-template');
-  const cardElement = card.generateCard();
-
-  document.querySelector('.elements').append(cardElement);
-});
-
+//фукция добавления новой карточки
 const addCard =(item) =>{ //фукция добавления новой карточки
-   const card = new Card(item, '#element-template').generateCard();
-   document.querySelector('.elements').prepend(card);
+  const card = new Card(item, '#element-template').generateCard();
+  initialContainer.prepend(card);
 }
 
-popupFormAdd.addEventListener('submit', (e) => {//добавляет событие на сабмит
+//добавление карточек из массива
+initialCards.reverse().forEach((item) => { 
+  addCard(item);;
+}); 
+
+//добавляет событие на сабмит
+popupFormAdd.addEventListener('submit', (e) => {
   e.preventDefault();
   const item = {
     name: placeInput.value,
     link: linkInput.value,
   }
-  linkInput.value = '';
-  placeInput.value = '';
+  linkInput.value = ''; 
+  placeInput.value = ''; 
   addCard(item);
   closePopup(popupAdd);  
-})
+});
 
+export function handleOpenPopup(link, name){ 
+  popupImageCard.src = link;
+  popupImageCard.alt = name;
+  popupImageTitleCard.textContent = name;
+  openPopup(popupImage);
+};
+ 
 // открывает попап  
-export const openPopup = (popupName) => {  
+const openPopup = (popupName) => {  
   popupName.classList.add('popup_opened');
-  document.addEventListener("keydown", closePopupEsc);
+  document.addEventListener("keydown", closePopupOnEsc);
 };  
 
-buttonOpenPopupEdit.addEventListener('click', handleOpenPopupEdit);   
-buttonOpenPopupAdd.addEventListener('click', ()=> openPopup(popupAdd));  
+buttonOpenPopupAdd.addEventListener('click', ()=> openPopup(popupAdd));   
 
 // закрывает попап  
 const closePopup = (popupName) => { 
   popupName.classList.remove('popup_opened'); 
-  document.removeEventListener("keydown", closePopupEsc); 
+  document.removeEventListener("keydown", closePopupOnEsc); 
 };  
 
-buttonClosePopupEdit.addEventListener('click', ()=> closePopup(popupEdit));  
-buttonClosePopupAdd.addEventListener('click', ()=> closePopup(popupAdd));  
+//закрывает попап 
+function handleCkickClosePopup(evt) { 
+  if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__close-button')) {   
+    closePopup(evt.currentTarget);  
+  }  
+};  
+
+//закрывает попап по esc 
+function closePopupOnEsc(evt) { 
+  if (evt.key === "Escape") { 
+    const openPopupForEsc = document.querySelector(".popup_opened"); 
+    closePopup(openPopupForEsc);
+  } 
+}; 
+
+popupEdit.addEventListener('mousedown', handleCkickClosePopup);  
+popupAdd.addEventListener('mousedown', handleCkickClosePopup);   
+popupImage.addEventListener('mousedown', handleCkickClosePopup);  
 
 //передает значение PopupEdit
 function handleOpenPopupEdit() { 
   nameInput.value = profileTitle.textContent;   
   jobInput.value = profileSubtitle.textContent;  
   openPopup(popupEdit); 
-}   
-
-//закрывает попап по оверлэй 
-function closePopupOverlay(evt) { 
-if (evt.target === evt.currentTarget) {   
-  closePopup(popupEdit); 
-  closePopup(popupAdd); 
-  closePopup(popupImage); 
-  }  
-}   
-
-popupEdit.addEventListener('mousedown', closePopupOverlay);  
-popupAdd.addEventListener('mousedown', closePopupOverlay);   
-popupImage.addEventListener('mousedown', closePopupOverlay);  
-
-//закрывает попап по esc 
-function closePopupEsc(evt) { 
-  if (evt.key === "Escape") { 
-   const openPopupForEsc = document.querySelector(".popup_opened"); 
-    closePopup(openPopupForEsc);
-  } 
-} 
+};  
+buttonOpenPopupEdit.addEventListener('click', handleOpenPopupEdit);
 
 // отправляет форму редактирования профиля 
-function handleSubmitForm(evt) {  
+function handleSubmitFormEdit(evt) {  
   evt.preventDefault();   
   profileTitle.textContent = nameInput.value;  
   profileSubtitle.textContent = jobInput.value;  
   closePopup(popupEdit); 
-}  
-
-formElementEdit.addEventListener('submit', handleSubmitForm);   
-
-buttonClosePopupImage.addEventListener('click', ()=> closePopup(popupImage)); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};  
+formElementEdit.addEventListener('submit', handleSubmitFormEdit);
+   
