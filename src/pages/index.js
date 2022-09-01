@@ -72,6 +72,7 @@ const userInfo = new UserInfo({
 function handlePopupAddCard(item) {
   cardList.addItem(createCard(item));
   popupFormAddCard.close();
+  validationPopupAdd.enableValidation();
 };
 
 //слушатель по кнопке добавления

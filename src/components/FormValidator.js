@@ -55,4 +55,4 @@ export class FormValidator{
       this._buttonElement.removeAttribute("disabled"); 
     };
   };
-};
+}
