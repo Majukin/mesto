@@ -51,8 +51,8 @@ function handlePopupProfile(item) {
 buttonOpenPopupEdit.addEventListener("click", () => {
 	popupFormProfile.open();
   validationPopupEdit.resetValidation();
-    const userData = userInfo.getUserInfo();
-  	ProfileInputs.forEach(input => {
+  const userData = userInfo.getUserInfo();
+  ProfileInputs.forEach(input => {
 	  input.value = userData[input.name];
 	});
 });
