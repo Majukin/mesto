@@ -50,6 +50,7 @@ function handlePopupProfile(item) {
 //слушатель по кнопке редактирования
 buttonOpenPopupEdit.addEventListener("click", () => {
 	popupFormProfile.open();
+  validationPopupEdit.resetValidation();
     const userData = userInfo.getUserInfo();
   	ProfileInputs.forEach(input => {
 	  input.value = userData[input.name];
@@ -72,15 +73,15 @@ const userInfo = new UserInfo({
 function handlePopupAddCard(item) {
   cardList.addItem(createCard(item));
   popupFormAddCard.close();
-  validationPopupAdd.enableValidation();
 };
 
 //слушатель по кнопке добавления
 buttonOpenPopupAdd.addEventListener("click", () => {
   popupFormAddCard.open();
+  validationPopupAdd.resetValidation();
 });
 
-const popupFormAddCard = new PopupWithForm('#popup_add', handlePopupAddCard);//!
+const popupFormAddCard = new PopupWithForm('#popup_add', handlePopupAddCard);
 popupFormAddCard.setEventListeners();
 
 //валидация добавленных карточек 
