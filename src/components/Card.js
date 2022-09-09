@@ -28,6 +28,7 @@ export class Card {
     this._elementImage = this._element.querySelector('.element__image');
     this._delete = this._element.querySelector('.element__delete-button');
     this._like = this._element.querySelector('.element__like-button');
+    this._likeCounter = this._element.querySelector('.element__like-counter');
     this._elementImage.src = this._link;
     this._elementImage.alt = `Фото ${this._name}`;
     this._elemenImageTitle.textContent = this._name;
@@ -53,15 +54,15 @@ export class Card {
   }
 
   setLikes(arr) {
-    this._element.querySelector('.element__like-counter').textContent = arr.length;
+    this._likeCounter.textContent = arr.length;
     this._likes = arr;
     if (this._checkLike()) {
       this._like.classList.add('element__like-button_active');
     } else {
       this._like.classList.remove('element__like-button_active');
     }
-  }
-
+  } 
+  
   _setEventListeners() {
     this._elementImage.addEventListener('click', () => {
       this._handleCardClick(this._name, this._link);

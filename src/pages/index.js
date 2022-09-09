@@ -125,12 +125,6 @@ popupFormAddCard.setEventListeners();
 const validationPopupAdd = new FormValidator(settings, popupFormAdd); 
 validationPopupAdd.enableValidation(); 
 
-
-
-
-
-
-
 // добавление аватара
 function handlePopupChangeAvatar(inputsData) {
   popupFormAvatar.renderSaving(true);
@@ -161,14 +155,6 @@ popupFormAvatar.setEventListeners();
 //валидация аватара
 const validationPopupAvatar = new FormValidator(settings, popupFormAvatarImage); 
 validationPopupAvatar.enableValidation(); 
-
-
-
-
-
-
-
-
 
 //подтверждение удаления
 function handleTrashClick(id, card) {

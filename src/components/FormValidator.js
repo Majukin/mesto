@@ -41,7 +41,6 @@ export class FormValidator{
     });  
   };  
 
-  //метод включения валидации 
   enableValidation() { //запускает валидацию  
     this._setEventListeners(this._formElement);   
   };   
